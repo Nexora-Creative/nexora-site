@@ -1,0 +1,1111 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nexora Creative — Landing Ads (Conversion)</title>
+  <meta name="description" content="Design, landing pages et automatisations pensées pour convertir. Réponse sous 24h. Devis gratuit." />
+
+  
+  <!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id=GTM-WMM8L32D'+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WMM8L32D');
+</script>
+<!-- End Google Tag Manager -->
+
+  <style>
+    :root{
+      --bg0:#050B16;
+      --bg1:#070F23;
+      --card: rgba(255,255,255,0.06);
+      --card2: rgba(255,255,255,0.08);
+      --stroke: rgba(255,255,255,0.12);
+      --stroke2: rgba(255,255,255,0.18);
+      --txt: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.68);
+      --muted2: rgba(255,255,255,0.55);
+
+      --sky:#46A6FF;
+      --sky2:#86C7FF;
+      --deep:#0A2A66;
+      --good:#37d67a;
+      --warn:#ffcc66;
+
+      --shadow: 0 18px 60px rgba(0,0,0,0.45);
+      --shadow2: 0 10px 30px rgba(0,0,0,0.35);
+
+      --radius: 18px;
+      --radius2: 14px;
+      --max: 1120px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--txt);
+      background:
+        radial-gradient(1000px 600px at 80% -10%, rgba(70,166,255,0.35), transparent 60%),
+        radial-gradient(900px 500px at 10% 10%, rgba(134,199,255,0.22), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      min-height:100vh;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width: var(--max); margin:0 auto; padding: 26px 18px 70px; }
+
+    /* Top bar minimal */
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding: 10px 4px 18px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700; letter-spacing:0.2px;
+    }
+    .brand .logo{
+      width:34px; height:34px; border-radius: 10px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.35), transparent 45%),
+                  linear-gradient(135deg, rgba(70,166,255,0.95), rgba(134,199,255,0.55));
+      box-shadow: 0 10px 25px rgba(70,166,255,0.25);
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .brand small{ display:block; font-weight:600; color: var(--muted); margin-top:2px; }
+
+    .lang{
+      display:flex; gap:8px; align-items:center;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,0.04);
+      padding: 6px; border-radius: 999px;
+    }
+    .lang button{
+      border:0; cursor:pointer;
+      padding: 8px 12px; border-radius: 999px;
+      background: transparent; color: var(--muted);
+      font-weight:700;
+    }
+    .lang button.active{
+      background: rgba(70,166,255,0.18);
+      color: var(--txt);
+      border: 1px solid rgba(70,166,255,0.28);
+    }
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 22px;
+      align-items: stretch;
+      margin-top: 8px;
+    }
+    @media (max-width: 980px){
+      .hero{ grid-template-columns: 1fr; }
+    }
+
+    .panel{
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow2);
+      padding: 22px;
+      position: relative;
+      overflow:hidden;
+    }
+    .panel::before{
+      content:"";
+      position:absolute; inset:-1px;
+      background: radial-gradient(600px 240px at 20% 0%, rgba(70,166,255,0.22), transparent 55%),
+                  radial-gradient(500px 260px at 85% 30%, rgba(134,199,255,0.14), transparent 60%);
+      pointer-events:none;
+    }
+    .panel > *{ position:relative; z-index:1; }
+
+    .kicker{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(70,166,255,0.25);
+      background: rgba(70,166,255,0.12);
+      color: var(--txt);
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      font-size: 13px;
+    }
+    .dot{
+      width:9px; height:9px; border-radius: 50%;
+      background: var(--good);
+      box-shadow: 0 0 0 4px rgba(55,214,122,0.16);
+    }
+
+    h1{
+      margin: 14px 0 10px;
+      font-size: clamp(30px, 3.6vw, 48px);
+      line-height: 1.08;
+      letter-spacing: -0.5px;
+    }
+    .sub{
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
+      max-width: 62ch;
+    }
+
+    .ctaRow{
+      display:flex; flex-wrap:wrap;
+      gap: 12px;
+      align-items:center;
+      margin-top: 14px;
+    }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      border: 1px solid rgba(70,166,255,0.25);
+      background: linear-gradient(135deg, rgba(70,166,255,0.95), rgba(134,199,255,0.55));
+      color: #061024;
+      font-weight: 900;
+      padding: 13px 16px;
+      border-radius: 14px;
+      cursor:pointer;
+      box-shadow: 0 18px 50px rgba(70,166,255,0.18);
+      transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
+      user-select:none;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      filter: brightness(1.04);
+      box-shadow: 0 22px 60px rgba(70,166,255,0.22);
+    }
+    .btn:active{ transform: translateY(0); }
+
+    .btn.secondary{
+      background: rgba(255,255,255,0.06);
+      color: var(--txt);
+      border: 1px solid var(--stroke);
+      box-shadow: none;
+    }
+
+    .micro{
+      color: var(--muted2);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    /* Proof chips */
+    .chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 16px; }
+    .chip{
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--stroke);
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    /* Right column card */
+    .cardTitle{
+      font-weight: 900;
+      letter-spacing: 0.2px;
+      margin: 2px 0 10px;
+      font-size: 16px;
+    }
+    .checklist{ display:grid; gap: 10px; margin-top: 12px; }
+    .check{
+      display:flex; gap:10px; align-items:flex-start;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--stroke);
+    }
+    .check i{
+      width:18px; height:18px; border-radius: 5px;
+      background: rgba(55,214,122,0.16);
+      border: 1px solid rgba(55,214,122,0.25);
+      display:inline-flex; align-items:center; justify-content:center;
+      color: var(--good);
+      font-style: normal; font-weight: 1000;
+      margin-top: 1px;
+    }
+    .check b{ display:block; }
+    .check span{ color: var(--muted); font-size: 13.5px; line-height: 1.4; }
+
+    /* Pricing */
+    .section{ margin-top: 26px; }
+    .sectionHeader{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap: 12px; flex-wrap:wrap;
+      margin-bottom: 12px;
+    }
+    .sectionHeader h2{
+      margin:0;
+      font-size: 22px;
+      letter-spacing: -0.2px;
+    }
+    .sectionHeader p{
+      margin:0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 980px){
+      .grid3{ grid-template-columns: 1fr; }
+    }
+
+    .priceCard{
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow2);
+      position:relative;
+      overflow:hidden;
+      transition: transform .18s ease, border-color .18s ease;
+      min-height: 260px;
+    }
+    .priceCard:hover{
+      transform: translateY(-2px);
+      border-color: rgba(134,199,255,0.22);
+    }
+    .priceCard.featured{
+      border-color: rgba(70,166,255,0.28);
+      background: linear-gradient(180deg, rgba(70,166,255,0.10), rgba(255,255,255,0.04));
+    }
+    .badge{
+      display:inline-flex; align-items:center;
+      gap:8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,204,102,0.14);
+      border: 1px solid rgba(255,204,102,0.25);
+      color: rgba(255,204,102,0.95);
+      font-weight: 900;
+      font-size: 12px;
+    }
+    .priceTop{
+      display:flex; justify-content:space-between; gap: 10px;
+      align-items:flex-start;
+    }
+    .priceName{
+      font-weight: 950;
+      font-size: 16px;
+      margin: 8px 0 6px;
+    }
+    .price{
+      font-size: 30px;
+      font-weight: 1000;
+      letter-spacing: -0.5px;
+      margin: 4px 0 10px;
+    }
+    .price small{
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 800;
+      margin-left: 6px;
+    }
+    .ul{
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 14px;
+    }
+    .ul li{ margin: 7px 0; }
+
+    .priceActions{ margin-top: 14px; display:flex; gap:10px; flex-wrap:wrap; }
+
+    /* Below pricing cards */
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    @media (max-width: 980px){
+      .grid2{ grid-template-columns: 1fr; }
+    }
+
+    .infoCard{
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow2);
+    }
+    .infoCard h3{
+      margin: 0 0 10px;
+      font-size: 16px;
+      letter-spacing: -0.2px;
+    }
+    .steps{
+      display:grid;
+      gap: 10px;
+    }
+    .step{
+      display:flex; gap:10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,0.04);
+    }
+    .step .n{
+      width: 26px; height: 26px;
+      border-radius: 10px;
+      display:flex; align-items:center; justify-content:center;
+      font-weight: 1000;
+      background: rgba(70,166,255,0.14);
+      border: 1px solid rgba(70,166,255,0.22);
+      color: var(--txt);
+      flex: 0 0 auto;
+    }
+    .step b{ display:block; }
+    .step span{ display:block; color: var(--muted); font-size: 13.5px; line-height: 1.4; }
+
+    /* Form */
+    .formWrap{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    @media (max-width: 980px){
+      .formWrap{ grid-template-columns: 1fr; }
+    }
+
+    form{
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow2);
+    }
+
+    .field{ margin-bottom: 10px; }
+    label{
+      display:block;
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: 0.35px;
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    input, select, textarea{
+      width:100%;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.18);
+      color: var(--txt);
+      padding: 12px 12px;
+      outline: none;
+      font-size: 15px;
+      transition: border-color .15s ease, box-shadow .15s ease;
+    }
+    textarea{ min-height: 120px; resize: vertical; }
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(70,166,255,0.35);
+      box-shadow: 0 0 0 4px rgba(70,166,255,0.12);
+    }
+    .formFoot{
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 10px; flex-wrap:wrap;
+      margin-top: 10px;
+    }
+    .tiny{
+      color: var(--muted2);
+      font-size: 12.5px;
+      line-height: 1.35;
+    }
+    .status{
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      display:none;
+    }
+    .status.ok{
+      display:block;
+      border-color: rgba(55,214,122,0.25);
+      background: rgba(55,214,122,0.12);
+      color: rgba(230,255,240,0.92);
+    }
+    .status.err{
+      display:block;
+      border-color: rgba(255,75,75,0.25);
+      background: rgba(255,75,75,0.10);
+      color: rgba(255,235,235,0.92);
+    }
+    .status.wait{
+      display:block;
+      border-color: rgba(255,204,102,0.25);
+      background: rgba(255,204,102,0.10);
+      color: rgba(255,244,220,0.92);
+    }
+
+    /* Footer */
+    .footer{
+      margin-top: 26px;
+      color: var(--muted2);
+      font-size: 12.5px;
+      display:flex; justify-content:space-between; flex-wrap:wrap; gap: 10px;
+      padding: 10px 4px 0;
+    }
+    .footer a{ color: rgba(134,199,255,0.90); font-weight: 800; }
+
+    /* Smooth reveal */
+    .reveal{ opacity:0; transform: translateY(10px); transition: opacity .5s ease, transform .5s ease; }
+    .reveal.on{ opacity:1; transform: translateY(0); }
+
+  </style>
+</head>
+
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMM8L32D"
+height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <div class="wrap">
+
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div style="font-size:15px;">Nexora Creative</div>
+          <small data-i18n="brand_sub">Design & Conversion Studio</small>
+        </div>
+      </div>
+
+      <div class="lang" aria-label="Language selector">
+        <button id="btnFR" class="active" type="button">FR</button>
+        <button id="btnEN" type="button">EN</button>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="panel reveal">
+        <div class="kicker">
+          <span class="dot"></span>
+          <span data-i18n="kicker">Réponse sous 24h • Sans engagement</span>
+        </div>
+
+        <h1 data-i18n="h1">Transformez votre visibilité digitale en clients réels.</h1>
+        <p class="sub" data-i18n="sub">
+          Design, landing pages et automatisations pensées pour convertir.
+          Une approche premium, claire, mesurable.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn" href="#contact" id="ctaTop">
+            <span data-i18n="cta">Demander un devis</span>
+            <span aria-hidden="true">›</span>
+          </a>
+          <a class="btn secondary" href="#offers" id="ctaOffers">
+            <span data-i18n="cta2">Voir les offres</span>
+          </a>
+        </div>
+
+        <p class="micro" style="margin-top:10px;" data-i18n="micro">
+          Une seule mission : générer des prospects qualifiés (pas juste “un joli site”).
+        </p>
+
+        <div class="chips">
+          <span class="chip">Landing Pages</span>
+          <span class="chip">Tracking (GA4 / Ads)</span>
+          <span class="chip">Automations</span>
+          <span class="chip">Branding</span>
+        </div>
+      </div>
+
+      <div class="panel reveal">
+        <div class="cardTitle" data-i18n="right_title">Conçu pour ceux qui veulent des résultats</div>
+
+        <div class="checklist">
+          <div class="check">
+            <i>✓</i>
+            <div>
+              <b data-i18n="r1t">Générer des leads qualifiés</b>
+              <span data-i18n="r1s">Formulaire connecté + parcours simple + CTA clair.</span>
+            </div>
+          </div>
+          <div class="check">
+            <i>✓</i>
+            <div>
+              <b data-i18n="r2t">Clarifier l’offre et le positionnement</b>
+              <span data-i18n="r2s">Votre message devient évident en 5 secondes.</span>
+            </div>
+          </div>
+          <div class="check">
+            <i>✓</i>
+            <div>
+              <b data-i18n="r3t">Automatiser la conversion</b>
+              <span data-i18n="r3s">Tracking + notifications + suivi prospects.</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:14px;">
+          <div class="chip" style="display:inline-flex; gap:8px; align-items:center;">
+            <span style="color:var(--warn); font-weight:1000;">★</span>
+            <span data-i18n="right_chip">Optimisé pour Google Ads & LinkedIn</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OFFERS -->
+    <div id="offers" class="section reveal">
+      <div class="sectionHeader">
+        <h2 data-i18n="offers_title">Offres “à partir de”</h2>
+        <p data-i18n="offers_sub">Simple, clair, premium. On va droit au résultat.</p>
+      </div>
+
+      <div class="grid3">
+        <div class="priceCard">
+          <div class="priceTop">
+            <div>
+              <div class="priceName" data-i18n="o1name">Essentiel</div>
+              <div class="price" data-i18n="o1price">490€<small>à partir de</small></div>
+            </div>
+          </div>
+          <ul class="ul">
+            <li data-i18n="o1a">Landing page optimisée conversion</li>
+            <li data-i18n="o1b">Design premium (mobile first)</li>
+            <li data-i18n="o1c">Formulaire connecté (Email / CRM)</li>
+          </ul>
+          <div class="priceActions">
+            <a class="btn secondary" href="#contact" data-i18n="o1cta">Demander un devis</a>
+          </div>
+        </div>
+
+        <div class="priceCard featured">
+          <div class="priceTop">
+            <div>
+              <span class="badge" data-i18n="badge">Le plus choisi</span>
+              <div class="priceName" style="margin-top:10px;" data-i18n="o2name">Business</div>
+              <div class="price" data-i18n="o2price">1 200€<small>à partir de</small></div>
+            </div>
+          </div>
+          <ul class="ul">
+            <li data-i18n="o2a">Landing + tracking (GA4 / Ads)</li>
+            <li data-i18n="o2b">Automatisation leads (notifications)</li>
+            <li data-i18n="o2c">Optimisation UX & structure conversion</li>
+          </ul>
+          <div class="priceActions">
+            <a class="btn" href="#contact" data-i18n="o2cta">Demander un devis</a>
+          </div>
+        </div>
+
+        <div class="priceCard">
+          <div class="priceTop">
+            <div>
+              <div class="priceName" data-i18n="o3name">Sur-mesure</div>
+              <div class="price" data-i18n="o3price">Devis<small>personnalisé</small></div>
+            </div>
+          </div>
+          <ul class="ul">
+            <li data-i18n="o3a">Branding, funnels, pages multiples</li>
+            <li data-i18n="o3b">Automatisations avancées</li>
+            <li data-i18n="o3c">Accompagnement continu</li>
+          </ul>
+          <div class="priceActions">
+            <a class="btn secondary" href="#contact" data-i18n="o3cta">Demander un devis</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Below pricing: cards -->
+      <div class="grid2">
+        <div class="infoCard">
+          <h3 data-i18n="approach_title">Une approche claire, premium, orientée résultats</h3>
+          <div class="checklist" style="margin-top:10px;">
+            <div class="check">
+              <i>✓</i>
+              <div>
+                <b data-i18n="a1t">Transparence</b>
+                <span data-i18n="a1s">On définit l’objectif, puis on construit autour. Simple.</span>
+              </div>
+            </div>
+            <div class="check">
+              <i>✓</i>
+              <div>
+                <b data-i18n="a2t">Performance mesurable</b>
+                <span data-i18n="a2s">Tracking, événements, suivi : vous voyez ce qui fonctionne.</span>
+              </div>
+            </div>
+            <div class="check">
+              <i>✓</i>
+              <div>
+                <b data-i18n="a3t">Expérience premium</b>
+                <span data-i18n="a3s">Design + clarté + vitesse : une page qui inspire confiance.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="infoCard">
+          <h3 data-i18n="process_title">Process rapide (3 étapes)</h3>
+          <div class="steps">
+            <div class="step">
+              <div class="n">1</div>
+              <div>
+                <b data-i18n="p1t">Audit & objectif</b>
+                <span data-i18n="p1s">On clarifie l’offre, la cible, et la conversion attendue.</span>
+              </div>
+            </div>
+            <div class="step">
+              <div class="n">2</div>
+              <div>
+                <b data-i18n="p2t">Design & structure</b>
+                <span data-i18n="p2s">Hiérarchie, cartes, CTA, preuve : tout devient évident.</span>
+              </div>
+            </div>
+            <div class="step">
+              <div class="n">3</div>
+              <div>
+                <b data-i18n="p3t">Tracking & mise en ligne</b>
+                <span data-i18n="p3s">GA4 / Ads + formulaire + suivi prospects.</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px;" class="chip" data-i18n="guarantee">
+            Réponse sous 24h • Sans engagement • Accompagnement humain
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="contact" class="section reveal">
+      <div class="sectionHeader">
+        <h2 data-i18n="contact_title">Demander un devis</h2>
+        <p data-i18n="contact_sub">Décris ton besoin, on te répond sous 24h.</p>
+      </div>
+
+      <div class="formWrap">
+        
+        <form
+  name="contact-ads"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  action="/merci.html"
+>
+
+  <input type="hidden" name="form-name" value="contact-ads" />
+
+  <p style="display:none">
+    <label>Ne pas remplir <input name="bot-field" /></label>
+  </p>
+
+  <input type="text" name="name" placeholder="Votre nom" required />
+  <input type="email" name="email" placeholder="Votre email" required />
+  <textarea name="message" placeholder="Votre message" required></textarea>
+
+  <button type="submit">Envoyer</button>
+</form>
+
+        <div class="infoCard">
+          <h3 data-i18n="side_title">Ce que tu reçois après ton message</h3>
+          <div class="steps" style="margin-top:10px;">
+            <div class="step">
+              <div class="n">✓</div>
+              <div>
+                <b data-i18n="s1t">Analyse rapide</b>
+                <span data-i18n="s1s">On identifie la meilleure option (Essentiel / Business / Sur-mesure).</span>
+              </div>
+            </div>
+            <div class="step">
+              <div class="n">✓</div>
+              <div>
+                <b data-i18n="s2t">Proposition claire</b>
+                <span data-i18n="s2s">Délai + livrables + prix “à partir de” expliqués.</span>
+              </div>
+            </div>
+            <div class="step">
+              <div class="n">✓</div>
+              <div>
+                <b data-i18n="s3t">Action immédiate</b>
+                <span data-i18n="s3s">On peut lancer rapidement pour générer des leads dès cette semaine.</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px;" class="chip" data-i18n="side_chip">
+            Optimisé pour Ads • Multilingue • Mobile-first
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>© <span id="year"></span> Nexora Creative</div>
+      <div>
+        <a href="#contact" data-i18n="footer_cta">Demander un devis</a>
+        <span style="opacity:.55;"> • </span>
+        <span data-i18n="footer_note">MAHNOELYA IT LTD — Nexora Studio (nom commercial)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script>
+    /* =========================================================
+       ✅ CONFIG EmailJS (TES IDENTIFIANTS)
+       ========================================================= */
+    const EMAILJS_SERVICE_ID  = "service_wm2us9l";
+    const EMAILJS_TEMPLATE_ID = "template_soa4lcs";
+    const EMAILJS_PUBLIC_KEY  = "qYfM09NWfITkt4x4Q";
+
+    /* =========================================================
+       ✅ I18N (FR/EN)
+       ========================================================= */
+    const dict = {
+      fr: {
+        brand_sub: "Design & Conversion Studio",
+        kicker: "Réponse sous 24h • Sans engagement",
+        h1: "Transformez votre visibilité digitale en clients réels.",
+        sub: "Design, landing pages et automatisations pensées pour convertir. Une approche premium, claire, mesurable.",
+        cta: "Demander un devis",
+        cta2: "Voir les offres",
+        micro: "Une seule mission : générer des prospects qualifiés (pas juste “un joli site”).",
+        right_title: "Conçu pour ceux qui veulent des résultats",
+        r1t: "Générer des leads qualifiés",
+        r1s: "Formulaire connecté + parcours simple + CTA clair.",
+        r2t: "Clarifier l’offre et le positionnement",
+        r2s: "Votre message devient évident en 5 secondes.",
+        r3t: "Automatiser la conversion",
+        r3s: "Tracking + notifications + suivi prospects.",
+        right_chip: "Optimisé pour Google Ads & LinkedIn",
+
+        offers_title: "Offres “à partir de”",
+        offers_sub: "Simple, clair, premium. On va droit au résultat.",
+        badge: "Le plus choisi",
+
+        o1name: "Essentiel",
+        o1price: "490€<small>à partir de</small>",
+        o1a: "Landing page optimisée conversion",
+        o1b: "Design premium (mobile first)",
+        o1c: "Formulaire connecté (Email / CRM)",
+        o1cta: "Demander un devis",
+
+        o2name: "Business",
+        o2price: "1 200€<small>à partir de</small>",
+        o2a: "Landing + tracking (GA4 / Ads)",
+        o2b: "Automatisation leads (notifications)",
+        o2c: "Optimisation UX & structure conversion",
+        o2cta: "Demander un devis",
+
+        o3name: "Sur-mesure",
+        o3price: "Devis<small>personnalisé</small>",
+        o3a: "Branding, funnels, pages multiples",
+        o3b: "Automatisations avancées",
+        o3c: "Accompagnement continu",
+        o3cta: "Demander un devis",
+
+        approach_title: "Une approche claire, premium, orientée résultats",
+        a1t: "Transparence",
+        a1s: "On définit l’objectif, puis on construit autour. Simple.",
+        a2t: "Performance mesurable",
+        a2s: "Tracking, événements, suivi : vous voyez ce qui fonctionne.",
+        a3t: "Expérience premium",
+        a3s: "Design + clarté + vitesse : une page qui inspire confiance.",
+
+        process_title: "Process rapide (3 étapes)",
+        p1t: "Audit & objectif",
+        p1s: "On clarifie l’offre, la cible, et la conversion attendue.",
+        p2t: "Design & structure",
+        p2s: "Hiérarchie, cartes, CTA, preuve : tout devient évident.",
+        p3t: "Tracking & mise en ligne",
+        p3s: "GA4 / Ads + formulaire + suivi prospects.",
+        guarantee: "Réponse sous 24h • Sans engagement • Accompagnement humain",
+
+        contact_title: "Demander un devis",
+        contact_sub: "Décris ton besoin, on te répond sous 24h.",
+        f_name: "Nom",
+        f_email: "Email",
+        f_project: "Type de projet",
+        f_message: "Message",
+        opt0: "Choisir…",
+        opt1: "Landing page (conversion)",
+        opt2: "Branding / Design",
+        opt3: "Automatisation / Tracking",
+        opt4: "Autre",
+        f_hint: "Réponse sous 24h • Sans engagement • Vos données restent confidentielles",
+        send: "Envoyer",
+
+        side_title: "Ce que tu reçois après ton message",
+        s1t: "Analyse rapide",
+        s1s: "On identifie la meilleure option (Essentiel / Business / Sur-mesure).",
+        s2t: "Proposition claire",
+        s2s: "Délai + livrables + prix “à partir de” expliqués.",
+        s3t: "Action immédiate",
+        s3s: "On peut lancer rapidement pour générer des leads dès cette semaine.",
+        side_chip: "Optimisé pour Ads • Multilingue • Mobile-first",
+
+        footer_cta: "Demander un devis",
+        footer_note: "MAHNOELYA IT LTD — Nexora Studio (nom commercial)",
+
+        ok: "✅ Message envoyé avec succès. On revient vers vous sous 24h.",
+        wait: "⏳ Envoi en cours…",
+        err: "❌ Erreur lors de l’envoi. Réessayez ou contactez hello@nexora-creative.com."
+      },
+      en: {
+        brand_sub: "Design & Conversion Studio",
+        kicker: "Reply within 24h • No commitment",
+        h1: "Turn your digital visibility into real clients.",
+        sub: "Design, landing pages and automations built to convert. Premium, clear, measurable.",
+        cta: "Request a quote",
+        cta2: "See offers",
+        micro: "One mission: generate qualified leads (not just a “pretty website”).",
+        right_title: "Built for people who want results",
+        r1t: "Generate qualified leads",
+        r1s: "Connected form + simple flow + clear CTA.",
+        r2t: "Clarify offer & positioning",
+        r2s: "Your message becomes obvious in 5 seconds.",
+        r3t: "Automate conversion",
+        r3s: "Tracking + notifications + lead follow-up.",
+        right_chip: "Optimized for Google Ads & LinkedIn",
+
+        offers_title: "Offers “from”",
+        offers_sub: "Simple, clear, premium. Straight to the point.",
+        badge: "Most chosen",
+
+        o1name: "Essential",
+        o1price: "€490<small>from</small>",
+        o1a: "Conversion-optimized landing page",
+        o1b: "Premium design (mobile first)",
+        o1c: "Connected form (Email / CRM)",
+        o1cta: "Request a quote",
+
+        o2name: "Business",
+        o2price: "€1,200<small>from</small>",
+        o2a: "Landing + tracking (GA4 / Ads)",
+        o2b: "Lead automation (notifications)",
+        o2c: "UX optimization & conversion structure",
+        o2cta: "Request a quote",
+
+        o3name: "Custom",
+        o3price: "Quote<small>tailored</small>",
+        o3a: "Branding, funnels, multiple pages",
+        o3b: "Advanced automations",
+        o3c: "Ongoing support",
+        o3cta: "Request a quote",
+
+        approach_title: "A clear, premium, results-driven approach",
+        a1t: "Transparency",
+        a1s: "We define the goal, then build around it. Simple.",
+        a2t: "Measurable performance",
+        a2s: "Tracking & events: you see what works.",
+        a3t: "Premium experience",
+        a3s: "Design + clarity + speed: a page that builds trust.",
+
+        process_title: "Fast process (3 steps)",
+        p1t: "Audit & goal",
+        p1s: "We clarify offer, target and expected conversion.",
+        p2t: "Design & structure",
+        p2s: "Hierarchy, cards, CTA, proof: everything becomes obvious.",
+        p3t: "Tracking & launch",
+        p3s: "GA4 / Ads + form + lead follow-up.",
+        guarantee: "Reply within 24h • No commitment • Human support",
+
+        contact_title: "Request a quote",
+        contact_sub: "Describe your need, we reply within 24h.",
+        f_name: "Name",
+        f_email: "Email",
+        f_project: "Project type",
+        f_message: "Message",
+        opt0: "Select…",
+        opt1: "Landing page (conversion)",
+        opt2: "Branding / Design",
+        opt3: "Automation / Tracking",
+        opt4: "Other",
+        f_hint: "Reply within 24h • No commitment • Your data stays confidential",
+        send: "Send",
+
+        side_title: "What you get after submitting",
+        s1t: "Quick analysis",
+        s1s: "We pick the best option (Essential / Business / Custom).",
+        s2t: "Clear proposal",
+        s2s: "Timeline + deliverables + “from” pricing explained.",
+        s3t: "Immediate action",
+        s3s: "We can launch fast and generate leads this week.",
+        side_chip: "Ads-ready • Multilingual • Mobile-first",
+
+        footer_cta: "Request a quote",
+        footer_note: "MAHNOELYA IT LTD — Nexora Studio (trade name)",
+
+        ok: "✅ Message sent successfully. We’ll get back to you within 24h.",
+        wait: "⏳ Sending…",
+        err: "❌ Sending failed. Try again or email hello@nexora-creative.com."
+      }
+    };
+
+    let currentLang = "fr";
+    function setLang(lang){
+      currentLang = lang;
+      document.getElementById("btnFR").classList.toggle("active", lang==="fr");
+      document.getElementById("btnEN").classList.toggle("active", lang==="en");
+      document.querySelectorAll("[data-i18n]").forEach(el=>{
+        const k = el.getAttribute("data-i18n");
+        const val = dict[lang][k];
+        if(typeof val === "string"){
+          // allow tiny HTML in price strings
+          if(k.endsWith("price")) el.innerHTML = val;
+          else el.textContent = val;
+        }
+      });
+      document.getElementById("page_lang").value = lang;
+      try{ localStorage.setItem("nx_lang", lang); }catch(e){}
+    }
+
+    document.getElementById("btnFR").addEventListener("click", ()=> setLang("fr"));
+    document.getElementById("btnEN").addEventListener("click", ()=> setLang("en"));
+
+    // Restore lang
+    try{
+      const saved = localStorage.getItem("nx_lang");
+      if(saved === "en") setLang("en");
+      else setLang("fr");
+    }catch(e){ setLang("fr"); }
+
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    /* =========================================================
+       ✅ UTM capture
+       ========================================================= */
+    function getParam(name){
+      const url = new URL(window.location.href);
+      return url.searchParams.get(name) || "";
+    }
+    function fillUtm(){
+      const fields = ["utm_source","utm_medium","utm_campaign","utm_content","utm_term"];
+      fields.forEach(f=>{
+        const v = getParam(f);
+        const el = document.getElementById(f);
+        if(el) el.value = v;
+        try{
+          if(v) localStorage.setItem("nx_"+f, v);
+          if(!v && el) el.value = localStorage.getItem("nx_"+f) || "";
+        }catch(e){}
+      });
+      document.getElementById("page_url").value = window.location.href;
+    }
+    fillUtm();
+
+    /* =========================================================
+       ✅ Smooth reveal on scroll
+       ========================================================= */
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting) e.target.classList.add("on");
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(el=> io.observe(el));
+
+    /* =========================================================
+       ✅ CONTACT SUBMIT (EmailJS + Conversion event)
+       ========================================================= */
+    (function(){
+      if(window.emailjs){
+        emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+      }
+    })();
+
+    const form = document.getElementById("contactForm");
+    const statusEl = document.getElementById("status");
+    const sendBtn = document.getElementById("sendBtn");
+
+    function setStatus(type, msg){
+      statusEl.className = "status " + type;
+      statusEl.textContent = msg;
+    }
+
+    function fireConversion() {
+  // 🔥 Google Ads / GA4 via gtag (si présent)
+  if (typeof window.gtag === "function") {
+    window.gtag("event", "contact_submit", {
+      method: "emailjs",
+      page_type: "ads"
+    });
+  }
+
+  // 🔥 Google Tag Manager (FIABLE À 100%)
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: "contact_submit",
+    method: "emailjs",
+    page_type: "ads"
+  });
+
+  console.log("🔥 contact_submit envoyé à GTM");
+}
+
+    form.addEventListener("submit", async (e)=>{
+      e.preventDefault();
+
+      // UI
+      setStatus("wait", dict[currentLang].wait);
+      sendBtn.disabled = true;
+      sendBtn.style.opacity = "0.85";
+
+      // Prepare template params
+      const params = {
+        name: form.name.value.trim(),
+        email: form.email.value.trim(),
+        project: form.project.value,
+        message: form.message.value.trim(),
+        utm_source: form.utm_source.value,
+        utm_medium: form.utm_medium.value,
+        utm_campaign: form.utm_campaign.value,
+        utm_content: form.utm_content.value,
+        utm_term: form.utm_term.value,
+        page_url: form.page_url.value,
+        page_lang: form.page_lang.value
+      };
+
+      try{
+        if(!window.emailjs) throw new Error("EmailJS not loaded");
+        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params);
+
+        // Success
+        fireConversion();
+        setStatus("ok", dict[currentLang].ok);
+        form.reset();
+        fillUtm();
+        document.getElementById("page_lang").value = currentLang;
+
+      }catch(err){
+        console.error("Contact send error:", err);
+        setStatus("err", dict[currentLang].err);
+      }finally{
+        sendBtn.disabled = false;
+        sendBtn.style.opacity = "1";
+      }
+    });
+
+  </script>
+</body>
+</html>
