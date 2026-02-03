@@ -839,56 +839,26 @@ Chaque projet fait l’objet d’une analyse personnalisée.
   <h2 id="form-title">Parlez-nous de votre projet</h2>
   <p id="form-subtitle">Réponse sous 24h.</p>
 
-  <form id="contactForm"
-      name="contact-ads"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      action="/merci.html">
+  <form
+  name="contact-ads"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  action="/merci.html"
+>
 
-    <!-- Netlify: nom du formulaire -->
   <input type="hidden" name="form-name" value="contact-ads" />
 
-  <!-- Anti-spam Netlify (ne pas toucher) -->
   <p style="display:none">
-    <label>Ne pas remplir: <input name="bot-field" /></label>
+    <label>Ne pas remplir <input name="bot-field" /></label>
   </p>
 
-    <input
-      type="text"
-      id="name"
-      name="name"
-      placeholder="Votre nom"
-      required
-    />
+  <input type="text" name="name" placeholder="Votre nom" required />
+  <input type="email" name="email" placeholder="Votre email" required />
+  <textarea name="message" placeholder="Votre message" required></textarea>
 
-    <input
-      type="email"
-      id="email"
-      name="email"
-      placeholder="Votre email professionnel"
-      required
-    />
-
-    <textarea
-      id="message"
-      name="message"
-      placeholder="Votre message"
-      required
-    ></textarea>
-
-    <!-- Honeypot anti-spam (ne pas supprimer) -->
-    <input
-      type="text"
-      name="website"
-      tabindex="-1"
-      autocomplete="off"
-      style="display:none"
-    />
-
-    <button type="submit" id="submit-btn">Envoyer</button>
-    <p id="form-status" class="form-status"></p>
-  </form>
+  <button type="submit">Envoyer</button>
+</form>
 </section>
 
   <!-- FOOTER -->

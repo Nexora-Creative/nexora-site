@@ -702,67 +702,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
 
       <div class="formWrap">
         
-        <form id="contactForm"
-      name="contact-ads"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      action="/merci.html">
+        <form
+  name="contact-ads"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  action="/merci.html"
+>
 
-      <!-- Netlify: nom du formulaire -->
   <input type="hidden" name="form-name" value="contact-ads" />
 
-  <!-- Anti-spam Netlify (ne pas toucher) -->
   <p style="display:none">
-    <label>Ne pas remplir: <input name="bot-field" /></label>
+    <label>Ne pas remplir <input name="bot-field" /></label>
   </p>
 
-          <div class="field">
-            <label for="name" data-i18n="f_name">Nom</label>
-            <input id="name" name="name" type="text" autocomplete="name" required placeholder="Ex: Hervé Patrick" />
-          </div>
+  <input type="text" name="name" placeholder="Votre nom" required />
+  <input type="email" name="email" placeholder="Votre email" required />
+  <textarea name="message" placeholder="Votre message" required></textarea>
 
-          <div class="field">
-            <label for="email" data-i18n="f_email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required placeholder="Ex: hello@nexora-creative.com" />
-          </div>
-
-          <div class="field">
-            <label for="project" data-i18n="f_project">Type de projet</label>
-            <select id="project" name="project" required>
-              <option value="" data-i18n="opt0">Choisir…</option>
-              <option value="Landing" data-i18n="opt1">Landing page (conversion)</option>
-              <option value="Branding" data-i18n="opt2">Branding / Design</option>
-              <option value="Automation" data-i18n="opt3">Automatisation / Tracking</option>
-              <option value="Other" data-i18n="opt4">Autre</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="message" data-i18n="f_message">Message</label>
-            <textarea id="message" name="message" required placeholder="Décris ton besoin en 2-3 phrases…"></textarea>
-          </div>
-
-          <!-- Hidden: UTM tracking -->
-          <input type="hidden" id="utm_source" name="utm_source" />
-          <input type="hidden" id="utm_medium" name="utm_medium" />
-          <input type="hidden" id="utm_campaign" name="utm_campaign" />
-          <input type="hidden" id="utm_content" name="utm_content" />
-          <input type="hidden" id="utm_term" name="utm_term" />
-          <input type="hidden" id="page_url" name="page_url" />
-          <input type="hidden" id="page_lang" name="page_lang" />
-
-          <div class="formFoot">
-            <div class="tiny" data-i18n="f_hint">
-              Réponse sous 24h • Sans engagement • Vos données restent confidentielles
-            </div>
-            <button class="btn" type="submit" id="sendBtn">
-              <span data-i18n="send">Envoyer</span> <span aria-hidden="true">›</span>
-            </button>
-          </div>
-
-          <div id="status" class="status"></div>
-        </form>
+  <button type="submit">Envoyer</button>
+</form>
 
         <div class="infoCard">
           <h3 data-i18n="side_title">Ce que tu reçois après ton message</h3>
