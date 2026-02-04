@@ -1,6 +1,994 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexora Creative — Solutions digitales pour PME</title>
+  <meta name="description" content="Nexora Creative accompagne les PME et entrepreneurs avec des solutions digitales simples, efficaces et orientées résultats." />
+
+  <style>
+/* ================= VARIABLES ================= */
+:root {
+  --blue-main: #46A6FF;
+  --blue-dark: #0A2A66;
+  --blue-soft: #E9F3FF;
+  --text-main: #0A2A66;
+  --text-muted: #6B7A90;
+  --white: #ffffff;
+  --bg-main: #F6F9FC;
+}
+
+/* ================= RESET ================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text-main);
+  background: var(--bg-main);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ================= HERO ================= */
+.hero {
+  background: linear-gradient(135deg, var(--blue-main), #7BC0FF);
+  color: var(--white);
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  max-width: 700px;
+  margin: 0 auto 35px;
+  opacity: 0.95;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ================= SECTIONS GLOBALES ================= */
+section {
+  padding: 80px 20px;
+}
+
+.section-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+section p.section-intro {
+  text-align: center;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+/* ================================
+   PRICING / TARIFS – NEXORA CREATIVE
+================================ */
+
+/* Section globale */
+.pricing-cards {
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #f7f9fc 0%, #eef3fb 100%);
+}
+
+/* Grille des cartes */
+.pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Carte */
+.pricing-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 36px 32px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(20, 40, 80, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Hover élégant */
+.pricing-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(20, 40, 80, 0.15);
+}
+
+/* Carte mise en avant */
+.pricing-card.featured {
+    border: 2px solid #1e6bff;
+    transform: scale(1.04);
+}
+
+/* Titre */
+.card-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0a2540;
+    margin-bottom: 12px;
+}
+
+/* Prix */
+.card-price {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1e6bff;
+    margin-bottom: 24px;
+}
+
+/* Liste features */
+.card-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px 0;
+    text-align: left;
+}
+
+.card-features li {
+    padding-left: 28px;
+    margin-bottom: 14px;
+    font-size: 15px;
+    color: #425466;
+    position: relative;
+    line-height: 1.5;
+}
+
+/* Check icon */
+.card-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #1e6bff;
+    font-weight: 700;
+}
+
+/* Boutons */
+.pricing-card .btn {
+    display: inline-block;
+    padding: 14px 26px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+/* CTA secondaire – Demander un devis */
+.pricing-card .btn-secondary {
+    background: #ffffff;
+    color: #1e6bff;
+    border: 2px solid #1e6bff;
+    box-shadow: none;
+}
+
+.pricing-card .btn-secondary:hover {
+    background: #1e6bff;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Bloc info sous tarifs */
+.pricing-note {
+    max-width: 900px;
+    margin: 40px auto 80px;
+    padding: 25px 30px;
+    background: #f7f9ff;
+    border-left: 5px solid #1e6bff;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #425466;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.pricing-note strong {
+    color: #0a2540;
+}
+
+/* Bouton principal */
+.btn-primary {
+    background: linear-gradient(135deg, #1e6bff, #3b82f6);
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(30, 107, 255, 0.35);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(30, 107, 255, 0.45);
+}
+
+.btn-secondary {
+  border: 2px solid var(--white);
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* Responsive tablette */
+@media (max-width: 1024px) {
+    .pricing-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Responsive mobile */
+@media (max-width: 640px) {
+    .pricing-cards {
+        grid-template-columns: 1fr;
+        padding: 60px 16px;
+    }
+
+    .pricing-card.featured {
+        transform: none;
+    }
+}
+
+/* ================= GRID CARDS ================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.card h3 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ================= CONTACT ================= */
+.contact {
+  background: var(--blue-soft);
+  border-radius: 12px;
+  padding: 60px 30px;
+}
+
+.contact h2,
+.contact p {
+  text-align: center;
+}
+
+.contact form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact input,
+.contact textarea {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  outline: none;
+  border-color: var(--blue-main);
+  box-shadow: 0 0 0 4px rgba(70, 166, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+#submit-btn {
+  background: var(--blue-main);
+  color: var(--white);
+  border: none;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+#submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(70, 166, 255, 0.35);
+}
+
+#submit-btn.loading {
+  pointer-events: none;
+  background: linear-gradient(90deg, #46A6FF, #7ABEFF, #46A6FF);
+  background-size: 200% 100%;
+  animation: loading 1.2s infinite linear;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background: var(--blue-dark);
+  color: var(--white);
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.9rem;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes loading {
+  from { background-position: 0% 0; }
+  to { background-position: 200% 0; }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-card.featured {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 32px 16px;
+  }
+
+  #contact-form,
+  #contact-form input,
+  #contact-form textarea,
+  #submit-btn {
+    width: 100%;
+  }
+}
+
+/* Carte éditoriale – Approche Nexora */
+.approach-card {
+    max-width: 900px;
+    margin: 80px auto;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 50px 60px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+    text-align: left;
+}
+
+.approach-card h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #0a2540;
+}
+
+.approach-card p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #425466;
+    margin-bottom: 18px;
+}
+
+.approach-card h3 {
+    margin-top: 32px;
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: #0a2540;
+}
+
+.approach-card ul {
+    margin-top: 20px;
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.approach-card li {
+    padding-left: 26px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    position: relative;
+}
+
+.approach-card li::before {
+    content: "●";
+    position: absolute;
+    left: 0;
+    color: #1e6bff;
+}
+
+/* Nettoyage visuel Ads */
+.pricing-card ul li {
+    opacity: 0.9;
+}
+
+.pricing-card ul li::before {
+    content: "✓";
+    color: #1e6bff;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+/* Finition premium cartes tarifs */
+.pricing-card {
+    transition: all 0.35s ease;
+    position: relative;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(30, 107, 255, 0.18);
+}
+
+/* Carte mise en avant */
+.pricing-card.featured {
+    border: 2px solid #1e6bff;
+    transform: scale(1.02);
+}
+
+.pricing-card.featured::before {
+    content: "Le plus choisi";
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e6bff;
+    color: #fff;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 20px;
+}
+
+/* Séparateurs élégants */
+.section-divider {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #1e6bff, #4f8dff);
+    margin: 50px auto;
+    border-radius: 4px;
+}
+
+/* Formulaire premium */
+#contact {
+    background: linear-gradient(180deg, #f7f9ff, #ffffff);
+    padding: 80px 20px;
+}
+
+#contact-form input,
+#contact-form textarea {
+    border-radius: 10px;
+    border: 1px solid #dbe3ff;
+    padding: 14px 16px;
+    font-size: 15px;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border-color: #1e6bff;
+    box-shadow: 0 0 0 3px rgba(30, 107, 255, 0.15);
+}
+
+/* Animation douce d’apparition */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pricing-card,
+.approach-card,
+#contact {
+    animation: fadeUp 0.8s ease both;
+}
+
+/* CTA ADS ultra conversion */
+.btn-primary {
+    background: linear-gradient(135deg, #1e6bff, #5a93ff);
+    font-size: 16px;
+    padding: 14px 26px;
+    border-radius: 12px;
+    box-shadow: 0 18px 40px rgba(30, 107, 255, 0.35);
+    position: relative;
+}
+
+.btn-primary::after {
+    content: "Réponse sous 24h • Sans engagement";
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    opacity: 0.85;
+    margin-top: 4px;
+}
+
+/* Carte centrale boostée pour Ads */
+.pricing-card.featured {
+    background: linear-gradient(180deg, #ffffff, #f6f9ff);
+    box-shadow: 0 35px 70px rgba(30, 107, 255, 0.25);
+    transform: scale(1.05);
+}
+
+.pricing-card.featured:hover {
+    transform: scale(1.08) translateY(-8px);
+}
+
+/* =========================
+   MOBILE FIRST – ADS READY
+   ========================= */
+
+@media (max-width: 768px) {
+
+  /* Global spacing */
+  body {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  section {
+    padding: 40px 18px;
+  }
+
+  /* ---------- APPROCHE CARD ---------- */
+  .approach-card {
+    padding: 35px 22px;
+    border-radius: 18px;
+    margin: 50px auto;
+  }
+
+  .approach-card h2 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .approach-card p {
+    font-size: 15px;
+    opacity: 0.9;
+  }
+
+  .approach-card ul {
+    padding-left: 18px;
+  }
+
+  /* ---------- PRICING GRID ---------- */
+  .pricing-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .pricing-card {
+    padding: 30px 22px;
+    border-radius: 20px;
+    text-align: center;
+  }
+
+  .pricing-card h3 {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  .card-price {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .pricing-card ul {
+    text-align: left;
+    margin: 20px 0;
+  }
+
+  .pricing-card ul li {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  /* ---------- FEATURED (CROISSANCE) ---------- */
+  .pricing-card.featured {
+    order: -1;
+    border: 2px solid #1e6bff;
+    box-shadow: 0 30px 60px rgba(30,107,255,0.25);
+  }
+
+  /* ---------- CTA BUTTON ---------- */
+  .btn-primary {
+    width: 100%;
+    font-size: 16px;
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .btn-primary::after {
+    font-size: 12px;
+  }
+
+  /* ---------- PRICING NOTE ---------- */
+  .pricing-note {
+    font-size: 14px;
+    padding: 22px;
+    margin: 35px 0 60px;
+  }
+
+  /* ---------- FORM ---------- */
+  #contact {
+    padding-top: 60px;
+  }
+
+  #contact h2 {
+    font-size: 22px;
+  }
+
+  #contact input,
+  #contact textarea {
+    font-size: 15px;
+    padding: 14px;
+  }
+
+  #submit-btn {
+    font-size: 16px;
+    padding: 16px;
+    border-radius: 14px;
+  }
+}
+
+</style>
+
+<!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WMM8L32D');
+</script>
+<!-- End Google Tag Manager -->
+
+</head>
+
+<body>
+
+  <noscript>
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMM8L32D"
+height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Développez votre activité grâce au digital</h1>
+    <p>
+      Nexora Creative accompagne les PME et entrepreneurs avec des solutions digitales simples,
+      efficaces et orientées résultats.
+    </p>
+    <div class="hero-buttons reveal">
+      <a href="#contact" class="btn-primary">Demander un devis gratuit</a>
+      <a href="#contact" class="btn-secondary">Être rappelé sous 24h</a>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- PROBLÈME -->
+  <section>
+    <h2>Votre problème</h2>
+    <p class="section-intro">
+      Beaucoup d’entreprises perdent des opportunités à cause d’un digital mal exploité.
+    </p>
+    <div class="grid">
+      <div class="card reveal" style="--delay: 0s">
+        <h3>Peu de prospects</h3>
+        <p>Votre présence en ligne ne génère pas assez de contacts qualifiés.</p>
+      </div>
+      <div class="card reveal" style="--delay: .1s">
+        <h3>Trop de complexité</h3>
+        <p>Outils, prestataires, jargon… tout devient confus et chronophage.</p>
+      </div>
+      <div class="card reveal" style="--delay: .2s">
+        <h3>Manque de temps</h3>
+        <p>Vous avez un business à gérer, pas le temps pour le technique.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section>
+    <h2>Notre solution</h2>
+    <p class="section-intro">
+      Nexora Creative conçoit des outils digitaux qui travaillent pour vous.
+    </p>
+    <div class="grid">
+      <div class="card reveal">
+        <h3>Sites & landing pages</h3>
+        <p>Des pages professionnelles pensées pour convertir.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Automatisation</h3>
+        <p>Formulaires, leads, emails : tout est automatisé.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Résultats concrets</h3>
+        <p>Notre priorité : vous aider à obtenir des clients.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="approach-card">
+  <h2>Une approche simple, efficace et orientée résultats</h2>
+
+  <p>
+    Nexora Creative est née d’un constat simple : beaucoup d’entreprises investissent
+    dans le digital sans obtenir de résultats concrets.
+  </p>
+
+  <p>
+    Notre mission est de transformer votre présence digitale en un véritable levier
+    de croissance, grâce à des solutions simples, mesurables et efficaces.
+  </p>
+
+  <h3>Notre vision</h3>
+  <p>
+    Le digital doit être compréhensible, rentable et adapté aux PME.
+    Nous privilégions l’efficacité à la complexité.
+  </p>
+
+  <h3>Ce qui nous différencie</h3>
+  <ul>
+    <li>Approche orientée conversion</li>
+    <li>Maîtrise du tracking et des données</li>
+    <li>Solutions personnalisées</li>
+    <li>Accompagnement humain</li>
+  </ul>
+
+  <h3>Notre méthode</h3>
+  <ol>
+    <li>Analyse de votre besoin</li>
+    <li>Proposition claire</li>
+    <li>Mise en place rapide</li>
+    <li>Suivi et optimisation</li>
+  </ol>
+
+  <p>
+    <strong>Parlez-nous de votre projet.</strong><br>
+    Nous vous répondons sous 24h.
+  </p>
+</section>
+
+  <section class="pricing-cards">
+  <div class="card pricing-card">
+    <h3 class="card-title">Essentiel Digital</h3>
+    <p class="card-price">À partir de <strong>590 € HT</strong></p>
+    <ul class="card-features">
+      <li>Site vitrine 1 page optimisé</li>
+      <li>Formulaire & tracking conversion</li>
+      <li>Responsive (mobile + desktop)</li>
+      <li>GA4 + GTM basique</li>
+      <li>Livraison rapide</li>
+    </ul>
+    <a href="#contact-form" class="btn btn-secondary">Demander un devis</a>
+  </div>
+
+  <div class="card pricing-card featured">
+    <h3 class="card-title">Croissance</h3>
+    <p class="card-price">À partir de <strong>1 490 € HT</strong></p>
+    <ul class="card-features">
+      <li>Site 3 à 5 pages</li>
+      <li>Design orienté conversion</li>
+      <li>Tracking avancé (GTM + GA4)</li>
+      <li>SEO de base + optimisation</li>
+      <li>Mise en ligne + support</li>
+    </ul>
+    <a href="#contact-form" class="btn btn-primary">Être rappelé</a>
+  </div>
+
+  <div class="card pricing-card">
+    <h3 class="card-title">Performance</h3>
+    <p class="card-price">À partir de <strong>2 990 € HT</strong></p>
+    <ul class="card-features">
+      <li>Refonte ou site complet</li>
+      <li>Automatisation + CRM</li>
+      <li>Tracking premium + Data</li>
+      <li>Préparation Ads</li>
+      <li>Suivi & Reporting</li>
+    </ul>
+    <a href="#contact-form" class="btn btn-primary">Parler à un expert</a>
+  </div>
+</section>
+
+<div class="pricing-note">
+Les tarifs indiqués sont donnés à titre indicatif et peuvent évoluer selon la complexité du projet.
+<br><br>
+Chaque projet fait l’objet d’une analyse personnalisée.  
+<strong>Un devis clair et détaillé est envoyé sous 24h, sans engagement.</strong>
+</div>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+  <h2 id="form-title">Parlez-nous de votre projet</h2>
+  <p id="form-subtitle">Réponse sous 24h.</p>
+
+  <form
+  name="contact-ads"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  action="/merci.html"
+>
+
+  <input type="hidden" name="form-name" value="contact-ads" />
+
+  <p style="display:none">
+    <label>Ne pas remplir <input name="bot-field" /></label>
+  </p>
+
+  <input type="text" name="name" placeholder="Votre nom" required />
+  <input type="email" name="email" placeholder="Votre email" required />
+  <textarea name="message" placeholder="Votre message" required></textarea>
+
+  <button type="submit">Envoyer</button>
+</form>
+</section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      Nexora Creative — Solutions digitales pour PME<br />
+      contact@nexora-creative.com · hello@nexora-creative.com<br />
+      © Nexora Creative
+    </p>
+  </footer>
+
+  <script>
+  const lang = navigator.language.startsWith("fr") ? "fr" : "en";
+
+  const i18n = {
+    fr: {
+      title: "Parlez-nous de votre projet",
+      subtitle: "Réponse sous 24h.",
+      name: "Votre nom",
+      email: "Votre email professionnel",
+      message: "Votre message",
+      send: "Envoyer",
+      success: "Message envoyé avec succès ✅"
+    },
+    en: {
+      title: "Tell us about your project",
+      subtitle: "Reply within 24h.",
+      name: "Your name",
+      email: "Your professional email",
+      message: "Your message",
+      send: "Send",
+      success: "Message sent successfully ✅"
+    }
+  };
+
+  window.copy = i18n[lang];
+</script>
+
+<script>
+  document.getElementById("form-title").innerText = copy.title;
+  document.getElementById("form-subtitle").innerText = copy.subtitle;
+  name.placeholder = copy.name;
+  email.placeholder = copy.email;
+  message.placeholder = copy.message;
+  
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  // ===============================
+  // EMAILJS + FORM SUBMIT + GTM
+  // ===============================
+
+  (function () {
+    // 1. Init EmailJS
+    emailjs.init("qYfM09NWfITkt4x4Q"); // <-- garde ta vraie clé ici
+
+    // 2. Récupération des éléments
+    const form = document.getElementById("contact-form");
+    const submitBtn = document.getElementById("submit-btn");
+    const status = document.getElementById("form-status");
+
+    const nameEl = document.getElementById("name");
+    const emailEl = document.getElementById("email");
+    const messageEl = document.getElementById("message");
+
+    if (!form || !submitBtn || !status) {
+      console.error("Formulaire : éléments manquants");
+      return;
+    }
+
+    // 3. Submit
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Envoi en cours…";
+      status.innerText = "";
+
+      try {
+        await emailjs.send(
+          "service_wm2us9l",   // <-- service EmailJS
+          "template_soa4lcs",  // <-- template EmailJS
+          {
+            name: nameEl.value,
+            email: emailEl.value,
+            message: messageEl.value,
+          }
+        );
+
+        // ✅ SUCCESS UI
+        status.innerText = "Message envoyé avec succès ✅";
+        status.className = "success";
+        form.reset();
+
+        // 🔥 EVENT POUR GTM
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'contact_submit',
+          page_type: 'ads',
+          form_name: 'contact'
+        });
+
+        console.log('🔥 contact_submit envoyé à GTM');
+
+      } catch (err) {
+        console.error("EmailJS error:", err);
+        status.innerText = "Erreur lors de l’envoi ❌";
+        status.className = "error";
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Envoyer";
+      }
+    });
+  })();
+</script>
+
+<form name="contact-ads" data-netlify="true" hidden>
+  <input type="hidden" name="form-name" value="contact-ads" />
+  <input type="text" name="name" />
+  <input type="email" name="email" />
+  <textarea name="message"></textarea>
+</form>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -1029,33 +2017,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </div>
   </div>
 </footer>
-
-  <script>
-  const lang = navigator.language.startsWith("fr") ? "fr" : "en";
-
-  const i18n = {
-    fr: {
-      title: "Parlez-nous de votre projet",
-      subtitle: "Réponse sous 24h.",
-      name: "Votre nom",
-      email: "Votre email professionnel",
-      message: "Votre message",
-      send: "Envoyer",
-      success: "Message envoyé avec succès ✅"
-    },
-    en: {
-      title: "Tell us about your project",
-      subtitle: "Reply within 24h.",
-      name: "Your name",
-      email: "Your professional email",
-      message: "Your message",
-      send: "Send",
-      success: "Message sent successfully ✅"
-    }
-  };
-
-  window.copy = i18n[lang];
-</script>
 
 <script>
   document.getElementById("form-title").innerText = copy.title;
