@@ -87,6 +87,19 @@ section {
   margin: 0 auto;
 }
 
+.logo-container {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 10;
+}
+
+.logo {
+  width: 56px;
+  max-width: 100%;
+  height: auto;
+}
+
 section h2 {
   text-align: center;
   font-size: 2rem;
@@ -258,6 +271,12 @@ section p.section-intro {
 @media (max-width: 768px) {
   .hero-logo img {
     max-width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 44px;
   }
 }
 
@@ -704,8 +723,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
 
 <!-- HERO -->
   <section class="hero">
-    <div class="hero-logo">
-      <img src="/logo-nexora.png" alt="Nexora Creative logo">
+    <div class="logo-container">
+      <img src="/logo-nexora.png" alt="Nexora Creative logo" class="logo">
     </div>
     <h1>Développez votre activité grâce au digital</h1>
     <p>
