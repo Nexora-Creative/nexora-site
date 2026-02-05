@@ -45,6 +45,17 @@ a {
   text-align: center;
 }
 
+.hero-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.hero-logo {
+  max-width: 160px;
+  height: auto;
+}
+
 .hero h1 {
   font-size: 2.6rem;
   margin-bottom: 20px;
@@ -243,6 +254,12 @@ section p.section-intro {
 }
 
 /* Responsive mobile */
+@media (max-width: 768px) {
+  .hero-logo img {
+    max-width: 120px;
+  }
+}
+
 @media (max-width: 640px) {
     .pricing-cards {
         grid-template-columns: 1fr;
@@ -686,6 +703,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
 
 <!-- HERO -->
   <section class="hero">
+    <div class="hero-logo">
+      <img src="assets/logo-nexora.png" alt="Nexora Creative logo">
+    </div>
     <h1>Développez votre activité grâce au digital</h1>
     <p>
       Nexora Creative accompagne les PME et entrepreneurs avec des solutions digitales simples,
