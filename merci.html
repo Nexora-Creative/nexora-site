@@ -1,11 +1,78 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Merci</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merci – Nexora Creative</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(135deg, #0A2A66, #46A6FF);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 48px 32px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      opacity: 0.95;
+    }
+
+    .reassurance {
+      margin-top: 16px;
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 32px;
+      padding: 14px 28px;
+      background: #ffffff;
+      color: #0A2A66;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+  </style>
 </head>
 <body>
-  <h1>Merci 🙌</h1>
-  <p>Votre message a bien été envoyé.</p>
+
+  <div class="container">
+    <h1>Merci 👋</h1>
+
+    <p>
+Nous avons bien reçu votre demande.<br>
+Nous vous recontactons sous <strong>24 heures maximum</strong>.
+</p>
+
+<a href="/" class="btn-primary">Retour à l’accueil</a>
+  </div>
+
 </body>
 </html>
