@@ -1,0 +1,22 @@
+{
+  "name": "Nexora Creative",
+  "short_name": "Nexora",
+  "description": "Solutions digitales premium pour PME et entrepreneurs.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#46A6FF",
+  "theme_color": "#46A6FF",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/android-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
