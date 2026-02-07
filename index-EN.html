@@ -7,10 +7,8 @@
 <meta name="theme-color" content="#46A6FF">
 
 <!-- SEO -->
-<h1>Clear, reliable and profitable digital solutions for SMEs</h1>
-<p>
-Nexora Creative supports businesses in building high-performance, secure websites designed to generate real, measurable results.
-</p>
+<title>Clear, reliable and profitable digital solutions for SMEs</title>
+<meta name="description" content="Nexora Creative supports businesses in building high-performance, secure websites designed to generate real, measurable results.">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32-v2.png">
@@ -54,6 +52,40 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.lang-switch {
+  position: fixed;
+  top: 18px;
+  right: 22px;
+  display: flex;
+  gap: 10px;
+  z-index: 999;
+  font-size: 13px;
+}
+
+.lang-switch .lang {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid #dbe3ff;
+  color: #0A2A66;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.lang-switch .lang:hover {
+  background: #1e6bff;
+  color: #fff;
+}
+
+.lang-switch .active {
+  background: #1e6bff;
+  color: #fff;
+  pointer-events: none;
 }
 
 /* ================= HERO ================= */
@@ -572,7 +604,7 @@ footer {
 }
 
 .pricing-card.featured::before {
-    content: "Le plus choisi par les PME";
+    content: "Most chosen by SMEs";
     position: absolute;
     top: -14px;
     left: 50%;
@@ -644,7 +676,7 @@ footer {
 }
 
 .btn-primary::after {
-    content: "Réponse sous 24h • Sans engagement";
+    content: "Response within 24h — no commitment";
     display: block;
     font-size: 11px;
     font-weight: 500;
@@ -1109,29 +1141,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
   <p>Response within 24h — no commitment</p>
 
   <form
-    name="contact-main"
-    method="POST"
-    data-netlify="true"
-    netlify-honeypot="bot-field"
-    action="/merci.html"
-  >
-    <input type="hidden" name="form-name" value="contact-main" />
+  name="contact-main"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  action="/merci.html"
+>
+  <input type="hidden" name="form-name" value="contact-main" />
 
-    <p style="display:none">
-      <label>Do not fill <input name="bot-field" /></label>
-    </p>
+  <p style="display:none">
+    <label>Do not fill <input name="bot-field" /></label>
+  </p>
 
-    <input type="text" name="name" placeholder="Your name" required />
-    <input type="email" name="email" placeholder="Your email" required />
+  <input
+    type="text"
+    name="name"
+    placeholder="Your name"
+    required
+  />
 
-    <textarea
-      name="message"
-      placeholder="Describe your project"
-      required
-    ></textarea>
+  <input
+    type="email"
+    name="email"
+    placeholder="Your email"
+    required
+  />
 
-    <button type="submit">Send</button>
-  </form>
+  <textarea
+    name="message"
+    placeholder="Describe your project"
+    required
+  ></textarea>
+
+  <button type="submit">Send</button>
+</form>
 </section>
 
 <!-- FOOTER -->
