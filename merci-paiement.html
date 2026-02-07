@@ -1,15 +1,165 @@
-<h1>Paiement confirmé</h1>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paiement confirmé — Nexora Creative</title>
+  <style>
+    :root{
+      --blue-sky:#46A6FF;
+      --blue-dark:#0A2A66;
+      --blue-light:#E9F3FF;
+      --bg:#F5F7FB;
+      --text:#0A2A66;
+      --muted:#6F7C8F;
+      --card:#FFFFFF;
+      --border:rgba(10,42,102,.12);
+      --shadow:0 18px 45px rgba(10,42,102,.12);
+      --radius:18px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background: radial-gradient(1200px 600px at 50% -10%, var(--blue-light), transparent 60%),
+                  linear-gradient(180deg, #ffffff, var(--bg));
+      color:var(--text);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+    .wrap{width:min(920px,100%);}
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .hero{
+      background: linear-gradient(135deg, var(--blue-sky), #2D7BFF);
+      padding:26px 22px;
+      color:#fff;
+      text-align:center;
+    }
+    .brand{
+      font-weight:800;
+      letter-spacing:.2px;
+      opacity:.95;
+      font-size:14px;
+    }
+    .hero h1{
+      margin-top:10px;
+      font-size:34px;
+      line-height:1.1;
+    }
+    .content{
+      padding:26px 22px 18px;
+      text-align:center;
+    }
+    .content p{
+      margin:10px auto;
+      max-width:56ch;
+      color:var(--text);
+      line-height:1.55;
+      font-size:16px;
+    }
+    .content p.muted{color:var(--muted)}
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      background:rgba(70,166,255,.12);
+      border:1px solid rgba(70,166,255,.25);
+      color:var(--blue-dark);
+      border-radius:999px;
+      font-weight:700;
+      margin:14px 0 6px;
+      font-size:14px;
+    }
+    .actions{
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:14px;
+      font-weight:800;
+      text-decoration:none;
+      min-width:220px;
+      border:1px solid transparent;
+    }
+    .btn.primary{
+      background:linear-gradient(135deg, #2D7BFF, var(--blue-sky));
+      color:#fff;
+      box-shadow:0 12px 30px rgba(45,123,255,.25);
+    }
+    .btn.ghost{
+      background:#fff;
+      color:var(--blue-dark);
+      border-color:rgba(10,42,102,.18);
+    }
+    .legal{
+      margin-top:18px;
+      padding-top:14px;
+      border-top:1px dashed rgba(10,42,102,.18);
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.5;
+      max-width:70ch;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    .footer{
+      text-align:center;
+      color:var(--muted);
+      font-size:12px;
+      padding:14px 10px 18px;
+    }
+    @media (max-width:520px){
+      .hero h1{font-size:28px}
+      .btn{min-width:100%}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <header class="hero">
+        <div class="brand">Nexora Creative</div>
+        <h1>Paiement confirmé</h1>
+      </header>
 
-<p>
-Votre paiement a bien été reçu.<br>
-Nous lançons votre projet immédiatement.
-</p>
+      <div class="content">
+        <div class="badge">✅ Transaction validée</div>
 
-<p>
-Un expert Nexora Creative vous contactera sous <strong>24h</strong>
-pour la mise en œuvre.
-</p>
+        <!-- ✅ ICI TU METS LE TEXTE (acompte OU paiement total) -->
+        <p><strong>Votre paiement a bien été reçu.</strong></p>
+        <p class="muted">Un expert Nexora Creative vous recontacte sous <strong>24h</strong>.</p>
 
-<p class="legal-note">
-Facturation conforme UK & UE.
-</p>
+        <div class="actions">
+          <a class="btn primary" href="https://nexora-creative.com/#contact">Retour au site</a>
+          <a class="btn ghost" href="mailto:contact@nexora-creative.com">Contacter l’équipe</a>
+        </div>
+
+        <!-- ✅ Optionnel (legal-note) -->
+        <div class="legal">
+          Facturation conforme UK & UE.
+        </div>
+      </div>
+
+      <div class="footer">
+        © Nexora Creative — Londres, Royaume-Uni
+      </div>
+    </section>
+  </main>
+</body>
+</html>
