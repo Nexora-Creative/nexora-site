@@ -1200,15 +1200,15 @@ Chaque projet fait l’objet d’une analyse personnalisée.
     }
   }
 
-  // Auto-redirect au chargement
   const savedLang = localStorage.getItem("lang");
-  if (savedLang) {
-    if (savedLang === "en" && !location.pathname.includes("EN")) {
-      window.location.href = "/index-EN.html";
-    }
-    if (savedLang === "fr" && location.pathname.includes("EN")) {
-      window.location.href = "/index.html";
-    }
+  const currentPage = window.location.pathname.split("/").pop();
+
+  if (savedLang === "en" && currentPage !== "index-EN.html") {
+    window.location.replace("/index-EN.html");
+  }
+
+  if (savedLang === "fr" && currentPage !== "index.html" && currentPage !== "") {
+    window.location.replace("/index.html");
   }
 </script>
 
