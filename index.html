@@ -57,9 +57,14 @@ a {
 
 .lang-switch {
   position: fixed;
-  top: 16px;
-  right: 16px;
-  z-index: 9999;
+  top: 18px;
+  right: 22px;
+  display: flex;
+  gap: 10px;
+
+  z-index: 2147483647;
+  isolation: isolate;
+  pointer-events: auto;
 }
 
 /* Boutons */
@@ -97,7 +102,7 @@ a {
   color: var(--white);
   padding: 100px 20px;
   text-align: center;
-  padding-top: 80;
+  padding-top: 80px;
 }
 
 .hero-logo {
@@ -741,8 +746,7 @@ form textarea {
    MOBILE FIRST – ADS READY
    ========================= */
 
-@media (max-width: 768px) { 
-
+@media (max-width: 768px) {
   /* Global spacing */
   body {
     font-size: 15px;
