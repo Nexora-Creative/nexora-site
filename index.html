@@ -23,7 +23,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192.png">
 
-  <style>
+<style>
 /* ================= VARIABLES ================= */
 :root {
   --blue-main: #46A6FF;
@@ -55,52 +55,28 @@ a {
   color: inherit;
 }
 
-.lang-switch{
+/* ================= LANG SWITCH (SAFE iOS) ================= */
+.lang-switch {
   position: fixed;
   top: 16px;
   right: 16px;
-  z-index: 99999;
+  z-index: 9999;
   display: flex;
   gap: 10px;
-
-  /* Important pour iOS */
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
 }
 
-.lang-switch .lang{
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+.lang-switch .lang {
   padding: 10px 14px;
   border-radius: 999px;
   font-weight: 700;
   font-size: 14px;
-  text-decoration: none;
-
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.95);
   border: 1px solid rgba(10,42,102,0.15);
-  color: #0A2A66;
-
-  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-/* Optionnel: style du bouton actif (selon la page) */
 html[lang="fr"] .lang-fr,
-html[lang="en"] .lang-en{
-  background: #1e6bff;
-  color: #fff;
-  border-color: transparent;
-}
-
-/* Hover */
-.lang-switch .lang:hover {
-  background: #1e6bff;
-  color: #fff;
-}
-
-/* Lang active */
-.lang-switch .lang.active {
+html[lang="en"] .lang-en {
   background: #1e6bff;
   color: #fff;
   pointer-events: none;
@@ -110,536 +86,58 @@ html[lang="en"] .lang-en{
 .hero {
   background: linear-gradient(135deg, var(--blue-main), #7BC0FF);
   color: var(--white);
-  padding: 100px 20px;
+  padding: 100px 20px 80px;
   text-align: center;
-  padding-top: 80px;
-}
-
-.hero-logo {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 24px;
-}
-
-.hero-logo img {
-  width: 120;
-  max-width: 100px;
-  height: auto;
 }
 
 .hero h1 {
   font-size: 2.6rem;
   margin-bottom: 20px;
-  font-weight: 700;
 }
 
 .hero p {
-  font-size: 1.15rem;
   max-width: 700px;
-  margin: 0 auto 35px;
+  margin: 0 auto 32px;
   opacity: 0.95;
 }
 
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.trust-bar {
-  text-align: center;
-  font-size: 0.9rem;
-  opacity: 0.8;
-  margin-top: 12px;
-}
-
-.trust-list {
-  margin-top: 24px;
-  line-height: 1.8;
-}
-
-.trust-list li {
-  margin-bottom: 8px;
-}
-
-/* ================= SECTIONS GLOBALES ================= */
+/* ================= SECTIONS ================= */
 section {
   padding: 80px 20px;
+  width: 100%;
+  position: relative;
 }
 
 .section-container {
   max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-.logo-container {
-  position: absolute;
-  top: 24px;
-  left: 24px;
-  z-index: 10;
-}
-
-.logo {
-  width: 112px;
-  height: auto;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.12));
-}
-
-section h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-section p.section-intro {
-  text-align: center;
-  color: var(--text-muted);
-  max-width: 700px;
-  margin: 0 auto 50px;
-}
-
-/* ================================
-   PRICING / TARIFS – NEXORA CREATIVE
-================================ */
-
-/* Section globale */
-.pricing-cards {
-    padding: 80px 20px;
-    background: linear-gradient(180deg, #f7f9fc 0%, #eef3fb 100%);
-}
-
-/* Grille des cartes */
-.pricing-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-/* Carte */
-.pricing-card {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 36px 32px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(20, 40, 80, 0.08);
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-/* Hover élégant */
-.pricing-card:hover {
-    box-shadow: 0 20px 50px rgba(20, 40, 80, 0.15);
-}
-
-/* Carte mise en avant */
-.pricing-card.featured {
-    border: 2px solid #1e6bff;
-    transform: scale(1.04);
-}
-
-/* Titre */
-.card-title {
-    font-size: 22px;
-    font-weight: 700;
-    color: #0a2540;
-    margin-bottom: 12px;
-}
-
-/* Prix */
-.card-price {
-    font-size: 1.2rem;
-    margin: 12px 0;
-    color: #0A2A66;
-}
-
-.card-price strong {
-  font-size: 1.4rem;
-}
-
-.price-eur {
-  font-size: 0.9rem;
-  color: #7E8A9A;
-  margin-left: 6px;
-}
-
-/* Liste features */
-.card-features {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 32px 0;
-    text-align: left;
-}
-
-.card-features li {
-    padding-left: 28px;
-    margin-bottom: 14px;
-    font-size: 15px;
-    color: #425466;
-    position: relative;
-    line-height: 1.5;
-}
-
-/* Check icon */
-.card-features li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #1e6bff;
-    font-weight: 700;
-}
-
-/* Boutons */
-.pricing-card .btn {
-    display: inline-block;
-    padding: 14px 26px;
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 15px;
-    text-decoration: none;
-    transition: all 0.25s ease;
-}
-
-/* CTA secondaire – Demander un devis */
-.pricing-card .btn-secondary {
-    background: #ffffff;
-    color: #1e6bff;
-    border: 2px solid #1e6bff;
-    box-shadow: none;
-}
-
-.pricing-card .btn-secondary:hover {
-    background: #1e6bff;
-    color: #ffffff;
-}
-
-/* Bloc info sous tarifs */
-.pricing-note {
-    max-width: 900px;
-    margin: 40px auto 80px;
-    padding: 25px 30px;
-    background: #f7f9ff;
-    border-left: 5px solid #1e6bff;
-    border-radius: 12px;
-    font-size: 14px;
-    color: #425466;
-    line-height: 1.6;
-    text-align: center;
-}
-
-.pricing-note strong {
-    color: #0a2540;
-}
-
-.pricing-cta {
-  padding: 80px 20px;
-  background: #f7f9fc;
-  text-align: center;
-}
-
-.pricing-cta-inner {
-  max-width: 960px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 32px 0;
-}
-
-.cta-subtitle {
-  margin-bottom: 24px;
-  font-size: 1rem;
-  color: #4a5a6a;
-}
-
-.cta-payment,
-.cta-legal {
-  margin-top: 16px;
-  font-size: 0.85rem;
-  color: #6b7280;
-  line-height: 1.5;
-}
-
-/* Bouton principal */
-.btn-primary {
-    background: linear-gradient(135deg, #1e6bff, #3b82f6);
-    color: #ffffff;
-    box-shadow: 0 8px 20px rgba(30, 107, 255, 0.35);
-}
-
-.btn-primary:hover {
-    box-shadow: 0 12px 28px rgba(30, 107, 255, 0.45);
-}
-
-.btn-secondary {
-  border: 2px solid var(--white);
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-weight: 600;
-}
-
-/* Responsive tablette */
-@media (max-width: 1024px) {
-    .pricing-cards {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-/* Responsive mobile */
-@media (max-width: 768px) {
-  .hero-logo img {
-    max-width: 120px;
-  }
-}
-
-@media (max-width: 768px) {
-  .logo {
-    width: 76px;
-  }
-}
-
-@media (max-width: 640px) {
-    .pricing-cards {
-        grid-template-columns: 1fr;
-        padding: 60px 16px;
-    }
-
-    .pricing-card.featured {
-        transform: none;
-    }
-}
-
-/* ================= GRID CARDS ================= */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-}
-
-.card {
-  background: var(--white);
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-}
-
-.card h3 {
-  margin-bottom: 12px;
-  font-size: 1.2rem;
-}
-
-.card p {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-}
-
-/* ================= CONTACT ================= */
-.contact {
-  background: var(--blue-soft);
-  border-radius: 12px;
-  padding: 60px 30px;
-}
-
-.contact h2,
-.contact p {
-  text-align: center;
-}
-
-.contact form {
-  max-width: 500px;
   margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
 }
 
-.contact input,
-.contact textarea {
-  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+/* ================= PRICING ================= */
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1100px;
+  margin: auto;
 }
 
-.contact input:focus,
-.contact textarea:focus {
-  outline: none;
-  border-color: var(--blue-main);
-  box-shadow: 0 0 0 4px rgba(70, 166, 255, 0.15);
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 14px 16px;
-  font-size: 16px;
-
-  border-radius: 12px;
-  border: 1px solid #dbe3ff;
-  background: #fff;
-
-  margin-bottom: 14px;
-}
-
-/* Champ message */
-.contact-form textarea {
-  min-height: 160px;
-  resize: vertical;
-}
-
-/* Mobile : encore plus confortable */
-@media (max-width: 768px) {
-  .contact-form textarea {
-    min-height: 200px;
-  }
-}
-
-#submit-btn {
-  background: var(--blue-main);
-  color: var(--white);
-  border: none;
-  padding: 14px;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.25s ease, transform 0.15s ease, box-shadow 0.2s ease;
-}
-
-#submit-btn:hover {
-  box-shadow: 0 8px 20px rgba(70, 166, 255, 0.35);
-}
-
-#submit-btn.loading {
-  pointer-events: none;
-  background: linear-gradient(90deg, #46A6FF, #7ABEFF, #46A6FF);
-  background-size: 200% 100%;
-  animation: loading 1.2s infinite linear;
-}
-
-/* ================= FOOTER ================= */
-footer {
-  background: var(--blue-dark);
-  color: var(--white);
-  text-align: center;
-  padding: 30px 20px;
-  font-size: 0.9rem;
-}
-
-/* ================= ANIMATIONS ================= */
-@keyframes loading {
-  from { background-position: 0% 0; }
-  to { background-position: 200% 0; }
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 900px) {
-  .pricing-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .pricing-card.featured {
-    transform: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .contact {
-    padding: 32px 16px;
-  }
-
-  #contact-form,
-  #contact-form input,
-  #contact-form textarea,
-  #submit-btn {
-    width: 100%;
-  }
-}
-
-/* Carte éditoriale – Approche Nexora */
-.approach-card {
-    max-width: 900px;
-    margin: 80px auto;
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 50px 60px;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.08);
-    text-align: left;
-}
-
-.approach-card h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #0a2540;
-}
-
-.approach-card p {
-    font-size: 16px;
-    line-height: 1.7;
-    color: #425466;
-    margin-bottom: 18px;
-}
-
-.approach-card h3 {
-    margin-top: 32px;
-    margin-bottom: 12px;
-    font-size: 18px;
-    color: #0a2540;
-}
-
-.approach-card ul {
-    margin-top: 20px;
-    margin-left: 0;
-    padding-left: 0;
-    list-style: none;
-}
-
-.approach-card li {
-    padding-left: 26px;
-    margin-bottom: 10px;
-    font-weight: 500;
-    position: relative;
-}
-
-.approach-card li::before {
-    content: "●";
-    position: absolute;
-    left: 0;
-    color: #1e6bff;
-}
-
-/* Nettoyage visuel Ads */
-.pricing-card ul li {
-    opacity: 0.9;
-}
-
-.pricing-card ul li::before {
-    content: "✓";
-    color: #1e6bff;
-    margin-right: 8px;
-    font-weight: bold;
-}
-
-/* Finition premium cartes tarifs */
 .pricing-card {
-    transition: all 0.35s ease;
-    position: relative;
+  background: #fff;
+  border-radius: 16px;
+  padding: 36px 32px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(20,40,80,.08);
+  transition: box-shadow .3s ease;
 }
 
 .pricing-card:hover {
-    box-shadow: 0 30px 60px rgba(30, 107, 255, 0.18);
+  box-shadow: 0 20px 50px rgba(20,40,80,.15);
 }
 
-/* Carte mise en avant */
 .pricing-card.featured {
-    border: 2px solid #1e6bff;
-    transform: scale(1.02);
+  border: 2px solid #1e6bff;
+  box-shadow: 0 25px 60px rgba(30,107,255,.25);
 }
 
 .pricing-card.featured::before {
@@ -656,72 +154,40 @@ footer {
     border-radius: 20px;
 }
 
-/* Séparateurs élégants */
-.section-divider {
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, #1e6bff, #4f8dff);
-    margin: 50px auto;
-    border-radius: 4px;
+.card-features {
+  list-style: none;
+  text-align: left;
+  margin: 24px 0;
 }
 
-/* Formulaire premium */
-#contact {
-    background: linear-gradient(180deg, #f7f9ff, #ffffff);
-    padding: 80px 20px;
+.card-features li {
+  padding-left: 24px;
+  margin-bottom: 12px;
+  position: relative;
 }
 
-#contact-form input,
-#contact-form textarea {
-    border-radius: 10px;
-    border: 1px solid #dbe3ff;
-    padding: 14px 16px;
-    font-size: 15px;
+.card-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #1e6bff;
+  font-weight: 700;
 }
 
-#contact-form input:focus,
-#contact-form textarea:focus {
-    outline: none;
-    border-color: #1e6bff;
-    box-shadow: 0 0 0 3px rgba(30, 107, 255, 0.15);
-}
-
-form input,
-form textarea {
-  padding: 14px 16px;
-  font-size: 16px;
-  border-radius: 12px;
-}
-
-form textarea {
-  min-height: 160px;
-  resize: vertical;
-}
-
-/* Animation douce d’apparition */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.section {
-  animation: fadeIn 0.8s ease both;
-}
-
-.pricing-card,
-.approach-card,
-#contact {
-    animation: fadeUp 0.8s ease both;
-}
-
-/* CTA ADS ultra conversion */
+/* ================= BUTTONS ================= */
 .btn-primary {
-    background: linear-gradient(135deg, #1e6bff, #5a93ff);
-    font-size: 16px;
-    padding: 14px 26px;
-    border-radius: 12px;
-    box-shadow: 0 18px 40px rgba(30, 107, 255, 0.35);
-    position: relative;
+  background: linear-gradient(135deg, #1e6bff, #3b82f6);
+  color: #fff;
+  padding: 14px 26px;
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(30,107,255,.35);
+}
+
+.btn-secondary {
+  border: 2px solid #1e6bff;
+  color: #1e6bff;
+  padding: 12px 24px;
+  border-radius: 12px;
 }
 
 .btn-primary::after {
@@ -733,143 +199,49 @@ form textarea {
     margin-top: 4px;
 }
 
-/* Carte centrale boostée pour Ads */
-.pricing-card.featured {
-    background: linear-gradient(180deg, #ffffff, #f6f9ff);
-    box-shadow: 0 35px 70px rgba(30, 107, 255, 0.25);
-    transform: scale(1.05);
+/* ================= CONTACT ================= */
+#contact {
+  background: linear-gradient(180deg, #f7f9ff, #fff);
 }
 
-.pricing-card.featured:hover {
-    transform: scale(1.08) translateY(-8px);
+#contact-form {
+  max-width: 520px;
+  margin: auto;
 }
 
-/* =========================
-   MOBILE FIRST – ADS READY
-   ========================= */
-
-@media (max-width: 768px) {
-  /* Global spacing */
-  body {
-    font-size: 15px;
-    line-height: 1.55;
-  }
-
-  section {
-    padding: 40px 18px;
-  }
-
-  /* ---------- APPROCHE CARD ---------- */
-  .approach-card {
-    padding: 35px 22px;
-    border-radius: 18px;
-    margin: 50px auto;
-  }
-
-  .approach-card h2 {
-    font-size: 22px;
-    line-height: 1.3;
-  }
-
-  .approach-card p {
-    font-size: 15px;
-    opacity: 0.9;
-  }
-
-  .approach-card ul {
-    padding-left: 18px;
-  }
-
-  /* ---------- PRICING GRID ---------- */
-  .pricing-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-  }
-
-  .pricing-card {
-    padding: 30px 22px;
-    border-radius: 20px;
-    text-align: center;
-  }
-
-  .pricing-card h3 {
-    font-size: 20px;
-    margin-bottom: 6px;
-  }
-
-  .card-price {
-    font-size: 18px;
-    margin-bottom: 16px;
-  }
-
-  .pricing-card ul {
-    text-align: left;
-    margin: 20px 0;
-  }
-
-  .pricing-card ul li {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-
-  /* ---------- FEATURED (CROISSANCE) ---------- */
-  .pricing-card.featured {
-    order: -1;
-    border: 2px solid #1e6bff;
-    box-shadow: 0 30px 60px rgba(30,107,255,0.25);
-  }
-
-  /* ---------- CTA BUTTON ---------- */
-  .btn-primary {
-    width: 100%;
-    font-size: 16px;
-    padding: 16px;
-    border-radius: 14px;
-  }
-
-  .btn-primary::after {
-    font-size: 12px;
-  }
-
-  /* ---------- PRICING NOTE ---------- */
-  .pricing-note {
-    font-size: 14px;
-    padding: 22px;
-    margin: 35px 0 60px;
-  }
-
-  /* ---------- FORM ---------- */
-  #contact {
-    padding-top: 60px;
-  }
-
-  #contact h2 {
-    font-size: 22px;
-  }
-
-  #contact input,
-  #contact textarea {
-    font-size: 15px;
-    padding: 14px;
-  }
-
-  #submit-btn {
-    font-size: 16px;
-    padding: 16px;
-    border-radius: 14px;
-  }
-}
-
-main {
-  display: block;
-}
-
-section {
-  position: relative;
+#contact-form input,
+#contact-form textarea {
   width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #dbe3ff;
+  font-size: 15px;
 }
 
+#submit-btn {
+  background: var(--blue-main);
+  color: #fff;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background: var(--blue-dark);
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .pricing-cards { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  .pricing-cards { grid-template-columns: 1fr; }
+}
 </style>
 
   <!-- Google Tag Manager -->
