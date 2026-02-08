@@ -55,32 +55,42 @@ a {
   color: inherit;
 }
 
-.lang-switch {
+.lang-switch{
   position: fixed;
-  top: 18px;
-  right: 22px;
+  top: 16px;
+  right: 16px;
+  z-index: 99999;
   display: flex;
   gap: 10px;
 
-  z-index: 2147483647;
-  isolation: isolate;
-  pointer-events: auto;
+  /* Important pour iOS */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
-/* Boutons */
-.lang-switch .lang {
-  display: flex;
+.lang-switch .lang{
+  display: inline-flex;
   align-items: center;
-  gap: 4px;
-
-  padding: 6px 10px;
-  font-size: 12px;
-  font-weight: 600;
-
+  gap: 8px;
+  padding: 10px 14px;
   border-radius: 999px;
-  border: 1px solid #dbe3ff;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(10,42,102,0.15);
   color: #0A2A66;
-  background: transparent;
+
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+}
+
+/* Optionnel: style du bouton actif (selon la page) */
+html[lang="fr"] .lang-fr,
+html[lang="en"] .lang-en{
+  background: #1e6bff;
+  color: #fff;
+  border-color: transparent;
 }
 
 /* Hover */
@@ -222,7 +232,6 @@ section p.section-intro {
 
 /* Hover élégant */
 .pricing-card:hover {
-    transform: translateY(-6px);
     box-shadow: 0 20px 50px rgba(20, 40, 80, 0.15);
 }
 
@@ -306,7 +315,6 @@ section p.section-intro {
 .pricing-card .btn-secondary:hover {
     background: #1e6bff;
     color: #ffffff;
-    transform: translateY(-2px);
 }
 
 /* Bloc info sous tarifs */
@@ -369,7 +377,6 @@ section p.section-intro {
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
     box-shadow: 0 12px 28px rgba(30, 107, 255, 0.45);
 }
 
@@ -465,7 +472,6 @@ section p.section-intro {
   outline: none;
   border-color: var(--blue-main);
   box-shadow: 0 0 0 4px rgba(70, 166, 255, 0.15);
-  transform: translateY(-1px);
 }
 
 .contact-form input,
@@ -507,7 +513,6 @@ section p.section-intro {
 }
 
 #submit-btn:hover {
-  transform: translateY(-1px);
   box-shadow: 0 8px 20px rgba(70, 166, 255, 0.35);
 }
 
@@ -628,7 +633,6 @@ footer {
 }
 
 .pricing-card:hover {
-    transform: translateY(-10px);
     box-shadow: 0 30px 60px rgba(30, 107, 255, 0.18);
 }
 
@@ -695,15 +699,13 @@ form textarea {
 }
 
 /* Animation douce d’apparition */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.section {
+  animation: fadeIn 0.8s ease both;
 }
 
 .pricing-card,
@@ -882,14 +884,10 @@ section {
 
 <body>
 
-<div class="lang-switch">
-  <a href="/index.html" class="lang">
-    🇫🇷 <span>FR</span>
-  </a>
-  <a href="/index-EN.html" class="lang active">
-    🇬🇧 <span>EN</span>
-  </a>
-</div>
+<div class="lang-switch" aria-label="Language switch">
+    <a class="lang lang-fr" href="/index.html">🇫🇷 FR</a>
+    <a class="lang lang-en" href="/index-EN.html">🇬🇧 EN</a>
+  </div>
 
 <noscript>
 <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMM8L32D"
