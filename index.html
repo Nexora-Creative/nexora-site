@@ -883,14 +883,8 @@ section {
 <body>
 
 <div class="lang-switch">
-  <a href="/index.html" 
-     class="lang active">
-     🇫🇷 FR
-  </a>
-  <a href="/index-EN.html" 
-     class="lang">
-     🇬🇧 EN
-  </a>
+  <button onclick="setLang('fr')">🇫🇷 FR</button>
+  <button onclick="setLang('en')">🇬🇧 EN</button>
 </div>
 
 <noscript>
@@ -1195,6 +1189,28 @@ Chaque projet fait l’objet d’une analyse personnalisée.
     Solutions digitales B2B • Paiement sécurisé • Support réactif
   </p>
 </footer>
+
+<script>
+  function setLang(lang) {
+    localStorage.setItem("lang", lang);
+    if (lang === "fr") {
+      window.location.href = "/index.html";
+    } else {
+      window.location.href = "/index-EN.html";
+    }
+  }
+
+  // Auto-redirect au chargement
+  const savedLang = localStorage.getItem("lang");
+  if (savedLang) {
+    if (savedLang === "en" && !location.pathname.includes("EN")) {
+      window.location.href = "/index-EN.html";
+    }
+    if (savedLang === "fr" && location.pathname.includes("EN")) {
+      window.location.href = "/index.html";
+    }
+  }
+</script>
 
 </body>
 </html>
